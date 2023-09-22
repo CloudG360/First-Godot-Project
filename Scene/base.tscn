@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://ceqc1pou5kumx"]
+
+[ext_resource type="Script" path="res://Behaviour/Camera/PanController.cs" id="1_ktvtx"]
+
+[sub_resource type="Gradient" id="Gradient_oagoo"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0.245161, 0.354839, 0.524306, 0.545139, 0.597222, 0.65625, 0.736111, 0.819444)
+colors = PackedColorArray(0.175776, 0.272605, 0.480579, 1, 0.187664, 0.309374, 0.605754, 1, 0.75322, 0.394686, 0.159003, 1, 0.733279, 0.548932, 0.343227, 1, 0.117859, 0.530816, 9.62615e-07, 1, 0.0925072, 0.444903, 2.88785e-07, 1, 0.336541, 0.342763, 0.372073, 1, 0.900671, 0.903161, 0.914513, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_a3w0j"]
+noise_type = 3
+seed = 439
+frequency = 0.0039
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qe2g8"]
+width = 2048
+height = 2048
+color_ramp = SubResource("Gradient_oagoo")
+noise = SubResource("FastNoiseLite_a3w0j")
+
+[node name="Base" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+texture = SubResource("NoiseTexture2D_qe2g8")
+
+[node name="Camera" type="Camera2D" parent="."]
+script = ExtResource("1_ktvtx")
