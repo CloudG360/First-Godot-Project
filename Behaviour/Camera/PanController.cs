@@ -9,16 +9,16 @@ namespace WizardsWithAPot.Behaviour.Camera
 		public static readonly Vector2 FixUpIsDown = new(1, -1);
 		public static readonly Vector2 FlipDirection = new(-1, -1);
 
-		[Export(PropertyHint.Range, "0,1200,0.1")]
+		[Export(PropertyHint.Range, "0,1500,0.1")]
 		private float MaxSpeed { get; set; } = 500f;
 
-		[Export(PropertyHint.Range, "0,600,5")]
+		[Export(PropertyHint.Range, "0,1500,5")]
 		private float AccelerationFactor { get; set; } = 750f;
 
-		[Export(PropertyHint.Range, "0,600,5")]
+		[Export(PropertyHint.Range, "0,1500,5")]
 		private float DampingFactor { get; set; } = 600f;
 		
-		[Export(PropertyHint.Range, "1,10,0.1")]
+		[Export(PropertyHint.Range, "0,5,0.1")]
 		private float StoppingDampingBoost { get; set; } = 0.4f;
 		
 		[Export(PropertyHint.Range, "0.1,5,0.1")]

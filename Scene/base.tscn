@@ -26,3 +26,5 @@ texture = SubResource("NoiseTexture2D_qe2g8")
 
 [node name="Camera" type="Camera2D" parent="."]
 script = ExtResource("1_ktvtx")
+StoppingDampingBoost = 2.5
+ZoomStrength = 0.2
